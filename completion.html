@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compliance Gap Tracker - Completion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="app-page" data-page="completion">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="app-topbar">
+    <div class="brand-block">
+      <strong>Compliance Gap Tracker</strong>
+      <span>GRC Command Center</span>
+    </div>
+    <nav class="app-nav" aria-label="Primary">
+      <a href="index.html">Intro</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="completion.html">Completion</a>
+    </nav>
+  </header>
+
+  <main class="container completion-layout app-main">
+    <section class="hero" aria-labelledby="completion-title">
+      <p class="eyebrow">GRC Cycle Closure</p>
+      <h1 id="completion-title">Assurance & Compliance Closure Summary</h1>
+      <p id="completion-message" class="hero-copy">
+        Review residual risk, open remediation items, and closure readiness for the assessment cycle.
+      </p>
+      <div class="hero-chips" aria-label="Closure indicators">
+        <span>Residual Risk Review</span>
+        <span>Audit Sign-Off</span>
+        <span>Closure Readiness</span>
+      </div>
+      <div class="stamp-row intro-stamps" aria-hidden="true">
+        <span>ASSURE</span>
+        <span>REVIEW</span>
+        <span>CLOSE</span>
+      </div>
+      <div class="hero-actions">
+        <button id="export-report" class="btn btn-primary" type="button">Export Assurance Register</button>
+        <button id="print-report" class="btn" type="button">Print Closure Report</button>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Completion summary cards">
+      <article class="stat-card">
+        <h2>Total Controls</h2>
+        <p id="completion-total">0</p>
+      </article>
+      <article class="stat-card ok">
+        <h2>Compliance Score</h2>
+        <p id="completion-score">0%</p>
+      </article>
+      <article class="stat-card risk">
+        <h2>Open Gaps</h2>
+        <p id="completion-open">0</p>
+      </article>
+      <article class="stat-card warn">
+        <h2>Overdue Actions</h2>
+        <p id="completion-overdue">0</p>
+      </article>
+    </section>
+
+    <section class="panel" aria-labelledby="pending-title">
+      <h2 id="pending-title">Pending Remediation Actions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Gap ID</th>
+              <th>Control ID</th>
+              <th>Issue</th>
+              <th>Owner</th>
+              <th>Due Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="completion-actions"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="remarks-title">
+      <h2 id="remarks-title">Auditor Remarks</h2>
+      <p id="completion-remarks" class="small-note">No records available yet. Add controls in the dashboard to generate completion insights.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="history-title">
+      <h2 id="history-title">Saved Assessment History</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Workspace</th>
+              <th>Last Updated</th>
+              <th>Controls</th>
+              <th>Compliance Score</th>
+              <th>Open Gaps</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="assessment-history-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
